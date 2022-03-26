@@ -25,7 +25,7 @@
 <html lang="en">
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title><?php the_field('name'); ?></title>
+  <title>FPI - <?php the_field('name'); ?></title>
   <link rel="stylesheet" href="<?php echo plugin_dir_url(__FILE__); ?>fpi_indicator/index-2022-03-26-01.css">
 </head>
 <body>
