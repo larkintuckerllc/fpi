@@ -89,7 +89,7 @@
     				'preview_size' => 'thumbnail',
     				'library' => 'all',
     			),
-          array (
+                array (
     				'key' => 'field_fpi_indicator_year',
     				'label' => 'Year',
     				'name' => 'year',
@@ -179,7 +179,7 @@
     				'max' => 5,
     				'step' => '',
     			),
-          array (
+                array (
     				'key' => 'field_fpi_indicator_description',
     				'label' => 'Description',
     				'name' => 'description',
@@ -188,15 +188,15 @@
     				'toolbar' => 'full',
     				'media_upload' => 'no',
     			),
-          array (
-            'key' => 'field_fpi_indicator_custom',
-            'label' => 'Custom',
-            'name' => 'custom',
-            'type' => 'wysiwyg',
-            'default_value' => '',
-            'toolbar' => 'full',
-            'media_upload' => 'yes',
-          ),
+                array (
+                    'key' => 'field_fpi_indicator_custom',
+                    'label' => 'Custom',
+                    'name' => 'custom',
+                    'type' => 'wysiwyg',
+                    'default_value' => '',
+                    'toolbar' => 'full',
+                    'media_upload' => 'yes',
+                ),
     		),
     		'location' => array (
     			array (
@@ -232,4 +232,17 @@
     	));
     }
   }
+
+  function fpi_indicator_template($single) {
+    global $post;
+	$plugin_dir_path = plugin_dir_path( __FILE__ );
+    if ( $post->post_type == 'fpi_indicator' ) {
+        if ( file_exists( $plugin_dir_path . '/fpi_indicator.php' ) ) {
+            return $plugin_dir_path . '/fpi_indicator.php';
+        }
+    }
+    return $single;
+  }
+
   add_action( 'init', 'fpi_create_post_type_indicator' );
+  add_filter( 'single_template', 'fpi_indicator_template');
