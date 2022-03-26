@@ -38,7 +38,7 @@
     .translate([0, 0])
     .scale(RADIUS);
   var path = d3.geoPath().projection(projection);
-  d3.json(window.baseUrl + 'fpi_indicator/world-countries.json', function(countries) {
+  d3.json(window.baseUrl + 'fpi-indicator/world-countries.json', function(countries) {
     mapCountriesD3
       .selectAll('.fpi_indicator_root__hero__map__countries__feature')
       .data(countries.features)

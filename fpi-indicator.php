@@ -26,7 +26,7 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>FPI - <?php the_field('name'); ?></title>
-  <link rel="stylesheet" href="<?php echo plugin_dir_url(__FILE__); ?>fpi_indicator/index-2022-03-26-01.css">
+  <link rel="stylesheet" href="<?php echo plugin_dir_url(__FILE__); ?>fpi-indicator/index-2022-03-26-01.css">
 </head>
 <body>
 <div id="fpi_indicator_root" class="container">
@@ -162,6 +162,6 @@
 </script>
 <script src="<?php echo plugin_dir_url(__FILE__); ?>node_modules/d3/build/d3.min.js"></script>
 <script src="<?php echo plugin_dir_url(__FILE__); ?>node_modules/d3-geo/dist/d3-geo.min.js"></script>
-<script src="<?php echo plugin_dir_url(__FILE__); ?>fpi_indicator/index-2022-03-26-01.js"></script>
+<script src="<?php echo plugin_dir_url(__FILE__); ?>fpi-indicator/index-2022-03-26-01.js"></script>
 </body>
 <?php endwhile; ?>
