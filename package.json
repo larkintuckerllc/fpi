@@ -1,0 +1,9 @@
+{
+  "name": "fpi",
+  "version": "1.0.0",
+  "dependencies": {
+    "d3": "^4.7.1",
+    "d3-geo": "^1.6.1"
+  }
+}
+  
