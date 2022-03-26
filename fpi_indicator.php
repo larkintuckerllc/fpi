@@ -31,6 +31,19 @@
 <body>
 <div id="fpi_indicator_root" class="container">
   <h3><a id="fpi_indicator_root__back">Back</a> &gt; <?php the_field('name') ?></h3>
+  <div id="fpi_indicator_root__hero">
+    <div id="fpi_indicator_root__hero__workaround">
+      <svg
+        id="fpi_indicator_root__hero__map"
+        viewBox='-50 -50 100 100'
+      ></svg>
+    </div>
+    <div
+      id="fpi_indicator_root__hero__image"
+      style="background-image: url(<?php the_field('image') ?>);"
+    >
+    </div>
+  </div>
   <div id="fpi_indicator_root__content">
     <div id="fpi_indicator_root__content__data">
       <div class="fpi_indicator_root__content__data__indicator">
@@ -138,6 +151,7 @@
   </div>
 </div>
 <script>
+  window.baseUrl = "<?php echo plugin_dir_url(__FILE__); ?>";
   window.fpiId = <?php the_ID(); ?>;
   window.fpiLatitude = <?php the_field('latitude'); ?>;
   window.fpiLongitude = <?php the_field('longitude'); ?>;
@@ -147,6 +161,7 @@
   window.fpiIndicators = <?php echo json_encode( $indicators ); ?>;
 </script>
 <script src="<?php echo plugin_dir_url(__FILE__); ?>/node_modules/d3/build/d3.min.js"></script>
+<script src="<?php echo plugin_dir_url(__FILE__); ?>/node_modules/d3-geo/dist/d3-geo.min.js"></script>
 <script src="<?php echo plugin_dir_url(__FILE__); ?>/fpi_indicator/index-2022-03-26-01.js"></script>
 </body>
 <?php endwhile; ?>

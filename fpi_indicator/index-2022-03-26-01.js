@@ -1,4 +1,6 @@
 (function() {
+  const RADIUS = 50;
+
   var ecologicalEl = document.getElementById('fpi_indicator_root__content__data__indicator__value__scale--ecological');
   var economicEl = document.getElementById('fpi_indicator_root__content__data__indicator__value__scale--economic');
   var communityEl = document.getElementById('fpi_indicator_root__content__data__indicator__value__scale--community');
@@ -13,6 +15,39 @@
   var comparisonEcologicalD3 = d3.select('#fpi_indicator_root__content__data__comparison--ecological');
   var comparisonEconomicD3 = d3.select('#fpi_indicator_root__content__data__comparison--economic');
   var comparisonCommunityD3 = d3.select('#fpi_indicator_root__content__data__comparison--community');
+
+  var mapD3 = d3.select('#fpi_indicator_root__hero__map');
+
+  // MAP
+  mapD3.append('rect')
+    .attr('x', -1 * RADIUS)
+    .attr('y', -1 * RADIUS)
+    .attr('width', RADIUS * 2)
+    .attr('height', RADIUS * 2)
+    .attr('id', 'fpi_indicator_root__hero__map__globe');
+  var mapCountriesD3 = mapD3.append('g');
+  var projection = d3
+    .geoOrthographic()
+    .rotate([-1 * Number(window.fpiLongitude) + 20, -1 * Number(window.fpiLatitude), 0])
+    .translate([0, 0])
+    .scale(RADIUS);
+  var path = d3.geoPath().projection(projection);
+  d3.json(window.baseUrl + '/fpi_indicator/world-countries.json', function(countries) {
+    mapCountriesD3
+      .selectAll('.fpi_indicator_root__hero__map__countries__feature')
+      .data(countries.features)
+      .enter()
+      .append('path')
+      .attr('class', 'fpi_indicator_root__hero__map__countries__feature')
+      .attr('d', function(d) { return path(d); });
+  });
+  var indicator = d3.geoCircle()
+    .center([Number(window.fpiLongitude), Number(window.fpiLatitude)])
+    .radius(2)();
+  mapD3
+    .append('path')
+    .attr('d', path(indicator))
+    .attr('class', 'fpi_indicator_root__hero__map__indicator');
 
   // INDICATORS
   ecologicalEl.style.backgroundColor = scaleColor(window.fpiEcological);
