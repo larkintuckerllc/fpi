@@ -1,6 +1,8 @@
 (function() {
   const RADIUS = 50;
 
+  var backEl = document.getElementById('fpi_indicator_root__back');
+
   var ecologicalEl = document.getElementById('fpi_indicator_root__content__data__indicator__value__scale--ecological');
   var economicEl = document.getElementById('fpi_indicator_root__content__data__indicator__value__scale--economic');
   var communityEl = document.getElementById('fpi_indicator_root__content__data__indicator__value__scale--community');
@@ -17,6 +19,10 @@
   var comparisonCommunityD3 = d3.select('#fpi_indicator_root__content__data__comparison--community');
 
   var mapD3 = d3.select('#fpi_indicator_root__hero__map');
+
+  backEl.addEventListener('click', function() {
+    window.history.back();
+  });
 
   // MAP
   mapD3.append('rect')
