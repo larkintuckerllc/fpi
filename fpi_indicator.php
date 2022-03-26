@@ -21,14 +21,131 @@
   wp_reset_query();
 ?>
 <?php while (have_posts()) : the_post(); ?>
-<div>test</div>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><?php the_field('name'); ?></title>
+  <link rel="stylesheet" href="<?php echo plugin_dir_url(__FILE__); ?>fpi_indicator/index-2022-03-26-01.css">
+</head>
+<body>
+<div id="fpi_indicator_root" class="container">
+  <h3><a id="fpi_indicator_root__back">Back</a> &gt; <?php the_field('name') ?></h3>
+  <div id="fpi_indicator_root__content">
+    <div id="fpi_indicator_root__content__data">
+      <div class="fpi_indicator_root__content__data__indicator">
+        <div class="fpi_indicator_root__content__data__indicator__title">Ecological</div>
+        <div class="fpi_indicator_root__content__data__indicator__value">
+          <div
+            id="fpi_indicator_root__content__data__indicator__value__scale--ecological"
+            class="fpi_indicator_root__content__data__indicator__value__scale"
+            style="width: 0%;"
+          >
+          </div>
+        </div>
+      </div>
+      <div
+        class="fpi_indicator_root__content__data__ranking"
+      >
+        Ranked
+        <span
+          id="fpi_indicator_root__content__data__ranking__rank--ecological"
+        ></span>
+        out of
+        <span
+          id="fpi_indicator_root__content__data__ranking__total--ecological"
+        ></span>
+        fisheries.
+      </div>
+      <div
+        id="fpi_indicator_root__content__data__comparison--ecological"
+        class="fpi_indicator_root__content__data__comparison"
+      >
+      </div>
+      <div class="fpi_indicator_root__content__data__indicator">
+        <div class="fpi_indicator_root__content__data__indicator__title">Economic</div>
+        <div class="fpi_indicator_root__content__data__indicator__value">
+          <div
+            id="fpi_indicator_root__content__data__indicator__value__scale--economic"
+            class="fpi_indicator_root__content__data__indicator__value__scale"
+            style="width: 0%;"
+          >
+          </div>
+        </div>
+      </div>
+      <div
+        class="fpi_indicator_root__content__data__ranking"
+      >
+        Ranked
+        <span
+          id="fpi_indicator_root__content__data__ranking__rank--economic"
+        ></span>
+        out of
+        <span
+          id="fpi_indicator_root__content__data__ranking__total--economic"
+        ></span>
+        fisheries.
+      </div>
+      <div
+        id="fpi_indicator_root__content__data__comparison--economic"
+        class="fpi_indicator_root__content__data__comparison"
+      >
+      </div>
+      <div class="fpi_indicator_root__content__data__indicator">
+        <div class="fpi_indicator_root__content__data__indicator__title">Community</div>
+        <div class="fpi_indicator_root__content__data__indicator__value">
+          <div
+            id="fpi_indicator_root__content__data__indicator__value__scale--community"
+            class="fpi_indicator_root__content__data__indicator__value__scale"
+            style="width: 0%;"
+          >
+          </div>
+        </div>
+      </div>
+      <div
+        class="fpi_indicator_root__content__data__ranking"
+      >
+        Ranked
+        <span
+          id="fpi_indicator_root__content__data__ranking__rank--community"
+        ></span>
+        out of
+        <span
+          id="fpi_indicator_root__content__data__ranking__total--community"
+        ></span>
+        fisheries.
+      </div>
+      <div
+        id="fpi_indicator_root__content__data__comparison--community"
+        class="fpi_indicator_root__content__data__comparison"
+      >
+      </div>
+    </div>
+    <div
+      id="fpi_indicator_root__content__overview"
+    >
+      <div
+        id="fpi_indicator_root__content__overview__description"
+      >
+        <?php the_field('description') ?>
+      </div>
+      <div
+        id="fpi_indicator_root__content__overview__custom"
+      >
+        <?php the_field('custom') ?>
+      </div>
+    </div>
+  </div>
+</div>
 <script>
-    window.fpiId = <?php the_ID(); ?>;
-    window.fpiLatitude = <?php the_field('latitude'); ?>;
-    window.fpiLongitude = <?php the_field('longitude'); ?>;
-    window.fpiEcological = <?php the_field('ecological'); ?>;
-    window.fpiEconomic = <?php the_field('economic'); ?>;
-    window.fpiCommunity = <?php the_field('community'); ?>;
-    window.fpiIndicators = <?php echo json_encode( $indicators ); ?>;
-  </script>
+  window.fpiId = <?php the_ID(); ?>;
+  window.fpiLatitude = <?php the_field('latitude'); ?>;
+  window.fpiLongitude = <?php the_field('longitude'); ?>;
+  window.fpiEcological = <?php the_field('ecological'); ?>;
+  window.fpiEconomic = <?php the_field('economic'); ?>;
+  window.fpiCommunity = <?php the_field('community'); ?>;
+  window.fpiIndicators = <?php echo json_encode( $indicators ); ?>;
+</script>
+<script src="<?php echo plugin_dir_url(__FILE__); ?>/fpi_indicator/index-2022-03-26-01.js"></script>
+</body>
 <?php endwhile; ?>
