@@ -160,8 +160,8 @@
   window.fpiCommunity = <?php the_field('community'); ?>;
   window.fpiIndicators = <?php echo json_encode( $indicators ); ?>;
 </script>
-<script src="<?php echo plugin_dir_url(__FILE__); ?>/node_modules/d3/build/d3.min.js"></script>
-<script src="<?php echo plugin_dir_url(__FILE__); ?>/node_modules/d3-geo/dist/d3-geo.min.js"></script>
-<script src="<?php echo plugin_dir_url(__FILE__); ?>/fpi_indicator/index-2022-03-26-01.js"></script>
+<script src="<?php echo plugin_dir_url(__FILE__); ?>node_modules/d3/build/d3.min.js"></script>
+<script src="<?php echo plugin_dir_url(__FILE__); ?>node_modules/d3-geo/dist/d3-geo.min.js"></script>
+<script src="<?php echo plugin_dir_url(__FILE__); ?>fpi_indicator/index-2022-03-26-01.js"></script>
 </body>
 <?php endwhile; ?>

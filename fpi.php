@@ -237,8 +237,8 @@
     global $post;
 	$plugin_dir_path = plugin_dir_path( __FILE__ );
     if ( $post->post_type == 'fpi_indicator' ) {
-        if ( file_exists( $plugin_dir_path . 'fpi_indicator.php' ) ) {
-            return $plugin_dir_path . '/fpi_indicator.php';
+        if ( file_exists( $plugin_dir_path . 'fpi-listing.php' ) ) {
+            return $plugin_dir_path . '/fpi-listing.php';
         }
     }
     return $single;
