@@ -233,10 +233,21 @@
     }
   }
 
-  function fpi_indicator_template($single) {
+  function fpi_single_template($single) {
     global $post;
 	$plugin_dir_path = plugin_dir_path( __FILE__ );
     if ( $post->post_type == 'fpi_indicator' ) {
+        if ( file_exists( $plugin_dir_path . 'fpi_indicator.php' ) ) {
+            return $plugin_dir_path . '/fpi_indicator.php';
+        }
+    }
+    return $single;
+  }
+
+  function fpi_page_template($single) {
+    global $post;
+	$plugin_dir_path = plugin_dir_path( __FILE__ );
+    if ( $post->post_name == 'debug' ) {
         if ( file_exists( $plugin_dir_path . 'fpi-listing.php' ) ) {
             return $plugin_dir_path . '/fpi-listing.php';
         }
@@ -245,4 +256,5 @@
   }
 
   add_action( 'init', 'fpi_create_post_type_indicator' );
-  add_filter( 'single_template', 'fpi_indicator_template');
+  add_filter( 'single_template', 'fpi_single_template');
+  add_filter( 'page_template', 'fpi_page_template');
