@@ -26,7 +26,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>FPI - Listing</title>
-    <script defer="defer" src="<?php echo plugin_dir_url(__FILE__); ?>fpi-listing/static/js/main.1a7c1641.js"></script>
+    <script defer="defer" src="<?php echo plugin_dir_url(__FILE__); ?>fpi-listing/static/js/main.9caab665.js"></script>
+    <link href="<?php echo plugin_dir_url(__FILE__); ?>fpi-listing/static/css/main.3cdbca8d.css" rel="stylesheet"></link>
   </head>
   <body>
     <div id="root"></div>
