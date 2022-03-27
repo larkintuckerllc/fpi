@@ -1,6 +1,7 @@
 html {
   box-sizing: border-box;
   font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 *, *:before, *:after {
@@ -24,10 +25,17 @@ img {
 
 #fpi_indicator_root {
 }
+#fpi_indicator_root__title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 12px;
+  margin-top: 12px;
+}
 #fpi_indicator_root__hero {
   position: relative;
   height: 200px;
   overflow: hidden;
+  margin-top: 12px;
 }
 #fpi_indicator_root__hero__workaround {
   display: none;
@@ -102,8 +110,15 @@ img {
     flex: 1 0 0px;
   }
 }
+#fpi_indicator_root__content {
+  margin-left: 12px;
+  margin-right: 12px;
+}
 #fpi_indicator_root__content__overview {
   margin-top: 20px;
+}
+#fpi_indicator_root__content__overview__custom {
+  margin-top: 12px;
 }
 .fpi_indicator_root__content__data__indicator {
   display: -webkit-flex;
