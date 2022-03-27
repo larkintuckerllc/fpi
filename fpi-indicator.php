@@ -30,7 +30,7 @@
 </head>
 <body>
 <div id="fpi_indicator_root" class="container">
-  <div><a id="fpi_indicator_root__back" href="#">Back</a> &gt; <?php the_field('name') ?></div>
+  <div><?php the_field('name') ?></div>
   <div id="fpi_indicator_root__hero">
     <div id="fpi_indicator_root__hero__workaround">
       <svg
