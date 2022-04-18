@@ -3,7 +3,7 @@
  * Plugin Name: FPI
  * Plugin URI: https://fpilab.org
  * Description: Fishery Performance Indicators
- * Version: 1.0
+ * Version: 1.1
  * Author: John Tucker
  * Author URI: https://fpilab.org
  */
