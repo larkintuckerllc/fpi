@@ -252,6 +252,11 @@
             return $plugin_dir_path . 'fpi-listing.php';
         }
     }
+    if ( $post->post_name == 'map' ) {
+        if ( file_exists( $plugin_dir_path . 'fpi-map.php' ) ) {
+            return $plugin_dir_path . 'fpi-map.php';
+        }
+    }
     return $single;
   }
 
